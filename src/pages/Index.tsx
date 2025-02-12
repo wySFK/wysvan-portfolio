@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 
+
 const Index = () => {
   const [isContactOpen, setIsContactOpen] = useState(false);
   const { toast } = useToast();
@@ -103,7 +104,7 @@ const Index = () => {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="relative">
                 <div className="aspect-square rounded-2xl overflow-hidden bg-gray-100">
-                  <img src="wysvan.jpg" width="50" alt="Wyslie Van"
+                  <img src="/images/wysvan.jpg" width="50" alt="Wyslie Van"
                     className="w-full h-full object-cover"
                   />
                 </div>
