@@ -315,7 +315,7 @@ const Index = () => {
                   <div className="space-y-6">
                     {[
                       { category: "Frontend Development", skills: ["HTML", "CSS", "JavaScript"] },
-                      { category: "UI/UX", skills: ["Figma", "Responsive Design", "Material UI"] },
+                      { category: "UI/UX", skills: ["Figma"] },
                       { category: "Development Tools", skills: ["Github", "VS Code"] },
                     ].map((skillSet, index) => (
                       <motion.div
