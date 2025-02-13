@@ -166,7 +166,7 @@ const Index = () => {
                 {
                   title: "Portfolio Website",
                   description: "A responsive portfolio website built with modern technologies",
-                  tags: ["CSS", "HTML"],
+                  tags: ["CSS", "HTML", "JavaScript"],
                   image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
                   githubUrl: "#",
                   liveUrl: "#",
