@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Facebook, Mail, ChevronDown, GraduationCap, Code, Brush, ExternalLink, FolderGit2, MessageSquare, Phone, MapPin } from "lucide-react";
+import { Github, Facebook, Mail, ChevronDown, Code, Brush, ExternalLink, FolderGit2, MessageSquare, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
@@ -7,7 +7,6 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
-
 
 const Index = () => {
   const [isContactOpen, setIsContactOpen] = useState(false);
@@ -42,7 +41,7 @@ const Index = () => {
             Hi, I'm <span className="text-gray-700">Wyslie Van Basa</span>
           </h1>
           <p className="mt-6 text-xl text-gray-600">
-           Creating functional and userfriendly digital solutions
+            Creating functional and userfriendly digital solutions
           </p>
           <div className="mt-8 flex gap-4 justify-center">
             <Button
@@ -56,9 +55,9 @@ const Index = () => {
             <Button
               size="lg"
               className="rounded-full hover:scale-105 transition-transform"
-              onClick={() => scrollToSection("education")}
+              onClick={() => scrollToSection("technologies")}
             >
-              View my background
+              View my skills
             </Button>
           </div>
           <div className="mt-12 flex gap-6 justify-center">
@@ -104,14 +103,12 @@ const Index = () => {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="relative">
                 <div className="aspect-square rounded-2xl overflow-hidden bg-gray-100">
-                  <img src="/images/wysvan.jpg" width="50" alt="Wyslie Van"
-                    className="w-full h-full object-cover"
-                  />
+                  <img src="/images/wysvan.jpg" alt="Wyslie Van Basa" className="w-full h-full object-cover" />
                 </div>
               </div>
               <div className="space-y-6">
                 <p className="text-gray-600 leading-relaxed">
-                I pursued my Information Technology studies at Holy Cross of Davao College. Familiar with HTML, CSS, and JavaScript , and motivated to learn more and improve. Looking for opportunities to gain hands on experience and grow in the tech industry.
+                  I pursued my Information Technology studies at Holy Cross of Davao College. Familiar with HTML, CSS, and JavaScript, and motivated to learn more and improve. Looking for opportunities to gain hands on experience and grow in the tech industry.
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3 text-gray-600">
@@ -245,8 +242,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Education Section */}
-      <section id="education" className="py-20 bg-gray-50">
+      {/* Technologies Section */}
+      <section id="technologies" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -255,135 +252,93 @@ const Index = () => {
             viewport={{ once: true }}
             className="max-w-4xl mx-auto"
           >
-            <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Education & Skills</h2>
-            <div className="grid md:grid-cols-2 gap-12">
-              {/* Education Timeline */}
-              <div className="space-y-8">
+            <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Technical Skills</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Frontend Technologies */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300"
+              >
                 <h3 className="text-xl font-semibold text-gray-900 mb-6 flex items-center">
-                  <GraduationCap className="w-6 h-6 mr-2" />
-                  Educational Background
+                  <Code className="w-6 h-6 mr-2 text-blue-500" />
+                  Front End Development
                 </h3>
-                {[
-                  {
-                    period: "2021 - 2025",
-                    degree: "Bachelor of Science in Information Technology",
-                    school: "Holy Cross of Davao College",
-                    description: "Sta.Ana Davao City",
-                  },
-                  {
-                    period: "2019 - 2021",
-                    school: "Christian Colleges of Southeast Asia ",
-                    description: "Don Julian Rodriguez Sr. Ave, Talomo, Davao City, Davao Del Sur",
-                  },
-                  {
-                    period: "2014 - 2019",
-                    school: "Davao City National High School F. Torres St. Davao City",
-                    description: "F. Torres St, Poblacion District, Davao City, 8000 Davao del Sur",
-                  },
-                  {
-                    period: "2008 - 2014",
-                    school: "Kapitan Tomas Monteverde Sr. Central Elementary School",
-                    description: " C. Bangoy St, Poblacion District, Davao City, 8000 Davao del Sur",
-                  },
-                ].map((edu, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.2 }}
-                    viewport={{ once: true }}
-                    className="relative pl-6 border-l-2 border-gray-200"
-                  >
-                    <span className="absolute left-[-9px] top-2 w-4 h-4 bg-white rounded-full border-2 border-gray-400" />
-                    <div className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <span className="text-sm font-medium text-gray-500">{edu.period}</span>
-                      <h4 className="font-semibold text-gray-900 mt-1">{edu.degree}</h4>
-                      <p className="text-gray-600 mt-1">{edu.school}</p>
-                      <p className="text-gray-500 text-sm mt-2">{edu.description}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-
-              {/* Skills Section */}
-              <div className="space-y-8">
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-6 flex items-center">
-                    <Code className="w-6 h-6 mr-2" />
-                    Technical Skills
-                  </h3>
-                  <div className="space-y-6">
-                    {[
-                      { category: "Frontend Development", skills: ["HTML", "CSS", "JavaScript"] },
-                      { category: "UI/UX", skills: ["Figma"] },
-                      { category: "Development Tools", skills: ["Github", "VS Code"] },
-                    ].map((skillSet, index) => (
-                      <motion.div
+                <div className="space-y-4">
+                  <div className="flex flex-wrap gap-2">
+                    {["HTML", "CSS", "JavaScript","Responsive Design"].map((tech, index) => (
+                      <span
                         key={index}
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: index * 0.2 }}
-                        viewport={{ once: true }}
-                        className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
+                        className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors"
                       >
-                        <h4 className="font-semibold text-gray-900 mb-3">{skillSet.category}</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {skillSet.skills.map((skill, idx) => (
-                            <span
-                              key={idx}
-                              className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors"
-                            >
-                              {skill}
-                            </span>
-                          ))}
-                        </div>
-                      </motion.div>
+                        {tech}
+                      </span>
                     ))}
                   </div>
                 </div>
+              </motion.div>
 
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-6 flex items-center">
-                    <Brush className="w-6 h-6 mr-2" />
-                    Soft Skills
-                  </h3>
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    viewport={{ once: true }}
-                    className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
-                  >
-                    <div className="grid grid-cols-2 gap-4">
-                      {[
-                        "Problem Solving",
-                        "Techinal Support",
-                        "Communication",
-                        "Time Management",
-                        "Creativity",
-                        "Critical Thinking",
-                        "Editing",
-                        "Project Management"
-                      ].map((skill, index) => (
-                        <div
-                          key={index}
-                          className="flex items-center space-x-2 text-gray-700"
-                        >
-                          <span className="w-2 h-2 bg-gray-400 rounded-full"></span>
-                          <span>{skill}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </motion.div>
+              {/* Development Tools */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300"
+              >
+                <h3 className="text-xl font-semibold text-gray-900 mb-6 flex items-center">
+                  <FolderGit2 className="w-6 h-6 mr-2 text-green-500" />
+                  Development Tools
+                </h3>
+                <div className="space-y-4">
+                  <div className="flex flex-wrap gap-2">
+                    {["GitHub", "VS Code"].map((tool, index) => (
+                      <span
+                        key={index}
+                        className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors"
+                      >
+                        {tool}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              </motion.div>
+
+
+              {/* UI/UX Skills */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300"
+              >
+                <h3 className="text-xl font-semibold text-gray-900 mb-6 flex items-center">
+                  <Brush className="w-6 h-6 mr-2 text-pink-500" />
+                  Familiar with UI/UX principles
+                </h3>
+                <div className="space-y-4">
+                  <div className="flex flex-wrap gap-2">
+                    {["UI Design", "Prototyping", "User Research", "Design Systems", "Accessibility"].map((skill, index) => (
+                      <span
+                        key={index}
+                        className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
       </section>
 
-       {/* Contact Section */}
-       <section id="contact" className="py-20 bg-white">
+      {/* Contact Section */}
+      <section id="contact" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
