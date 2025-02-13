@@ -264,7 +264,7 @@ const Index = () => {
               >
                 <h3 className="text-xl font-semibold text-gray-900 mb-6 flex items-center">
                   <Code className="w-6 h-6 mr-2 text-blue-500" />
-                  Front End Development
+                  Front End Development (Basic)
                 </h3>
                 <div className="space-y-4">
                   <div className="flex flex-wrap gap-2">
