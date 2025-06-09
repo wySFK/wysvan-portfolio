@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=JetBrains+Mono:ital@0;1&display=swap");
+
+/* Animation Variables */
+:root {
+  --color--foreground--100: rgb(10, 10, 10);
+  --color--background--100: rgb(255, 255, 200);
+  --color--accent: rgb(255, 223, 0);
+  --font-primary: "Inter", sans-serif;
+  --font-secondary: "JetBrains Mono", monospace;
+  --blendmode-effect: difference;
+  --bg-blur: 0px;
+}
+
+/* Animation styles for nav items, scroll text, and social links */
+.hover-effect {
+  position: relative;
+  white-space: nowrap;
+  text-decoration: none;
+  color: var(--color--foreground--100);
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.hover-effect:hover {
+  color: #000000;
+}
+
+.hover-effect--bg {
+  transition: background-color 0.3s ease;
+}
+
+.hover-effect--bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color--accent);
+  transition: transform 0.3s ease;
+  transform: scaleX(0);
+  transform-origin: left;
+  z-index: -1;
+  mix-blend-mode: var(--blendmode-effect);
+  backdrop-filter: blur(var(--bg-blur));
+}
+
+.hover-effect--bg:hover::after {
+  transform: scaleX(1);
+}
+
+/* Split text animation styles */
+.char {
+  display: inline-block;
+  position: relative;
+  opacity: 1;
+}
+
+/* Blinking animation for time display */
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.blinking {
+  animation: blink 1s steps(1) infinite;
+}
+
+/* Ensure nav buttons and scroll text have proper spacing */
+nav button,
+[data-scroll-text] {
+  position: relative;
+  overflow: visible;
+  text-align: center;
+  display: block;
+}
+
+.hover-effect--bg {
+  position: relative;
+  overflow: visible !important;
+  z-index: 1;
+}
+
+/* Social Links Animation */
+.social-link {
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+.social-link:hover {
+  color: #000000;
+}
+
+/* Scroll Text Animation */
+@keyframes textScramble {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+[data-scroll-text] {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  color: #666666;
+  animation: textScramble 4s ease-in-out infinite;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Container for scroll text to maintain layout */
+.scroll-text-container {
+  position: relative;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

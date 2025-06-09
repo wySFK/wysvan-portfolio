@@ -1,0 +1,227 @@
+/* Navigation styles */
+/* Halftone effect container */
+.halftone {
+  position: absolute;
+  inset: 0;
+  background-color: transparent;
+  background-image: radial-gradient(transparent 1px, rgba(248, 246, 241, 0.8) 1px);
+  background-size: 4px 4px;
+  backdrop-filter: blur(3px);
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgb(0, 0, 0) 60%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 60%, transparent 100%);
+  z-index: 0;
+}
+
+/* Ensure content is above halftone */
+header > div:not(.halftone) {
+  position: relative;
+  z-index: 1;
+}
+
+.nav-logo, .nav-link, [data-scroll-text] {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  font-weight: 300;
+  color: #666666;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+}
+
+.nav-logo:hover {
+  color: #000000;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.nav-link {
+  position: relative;
+  font-size: 11px;
+  color: #666666;
+  transition: all 0.3s ease;
+  padding: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  display: inline-block;
+  letter-spacing: 0.2em;
+  margin: 0;
+  width: max-content;
+  pointer-events: auto;
+}
+
+.nav-link:hover {
+  color: #000000;
+  animation: textGlow 2s ease-in-out infinite;
+}
+
+@keyframes textGlow {
+  0%, 100% {
+    text-shadow: none;
+  }
+  50% {
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Scroll Text Animation */
+[data-scroll-text] {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  color: #666666;
+  font-family: "Cutive Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+}
+
+[data-scroll-text] span {
+  display: inline-block;
+  opacity: 0;
+  animation: letter-glow 2s ease infinite;
+}
+
+/* Special handling for nav-link */
+.nav-link[data-scroll-text] {
+  color: #666666;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.nav-link[data-scroll-text] span {
+  opacity: 1;
+  animation: none;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.nav-link[data-scroll-text]:hover span {
+  color: #000000;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  animation: letter-glow 2s ease infinite;
+}
+
+@keyframes letter-glow {
+  0% { 
+    opacity: 0;
+    text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+  }
+  50% { 
+    opacity: 1;
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
+    color: #000000;
+  }
+  100% { 
+    opacity: 0.7;
+    text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Individual delays for scroll text */
+[data-scroll-text]:not(.nav-link) span:nth-child(1) { animation-delay: 0.05s; }
+[data-scroll-text]:not(.nav-link) span:nth-child(2) { animation-delay: 0.10s; }
+[data-scroll-text]:not(.nav-link) span:nth-child(3) { animation-delay: 0.15s; }
+[data-scroll-text]:not(.nav-link) span:nth-child(4) { animation-delay: 0.20s; }
+[data-scroll-text]:not(.nav-link) span:nth-child(5) { animation-delay: 0.25s; }
+[data-scroll-text]:not(.nav-link) span:nth-child(6) { animation-delay: 0.30s; }
+[data-scroll-text]:not(.nav-link) span:nth-child(7) { animation-delay: 0.35s; }
+[data-scroll-text]:not(.nav-link) span:nth-child(8) { animation-delay: 0.40s; }
+[data-scroll-text]:not(.nav-link) span:nth-child(9) { animation-delay: 0.45s; }
+[data-scroll-text]:not(.nav-link) span:nth-child(10) { animation-delay: 0.50s; }
+[data-scroll-text]:not(.nav-link) span:nth-child(11) { animation-delay: 0.55s; }
+[data-scroll-text]:not(.nav-link) span:nth-child(12) { animation-delay: 0.60s; }
+[data-scroll-text]:not(.nav-link) span:nth-child(13) { animation-delay: 0.65s; }
+[data-scroll-text]:not(.nav-link) span:nth-child(14) { animation-delay: 0.70s; }
+[data-scroll-text]:not(.nav-link) span:nth-child(15) { animation-delay: 0.75s; }
+[data-scroll-text]:not(.nav-link) span:nth-child(16) { animation-delay: 0.80s; }
+[data-scroll-text]:not(.nav-link) span:nth-child(17) { animation-delay: 0.85s; }
+[data-scroll-text]:not(.nav-link) span:nth-child(18) { animation-delay: 0.90s; }
+[data-scroll-text]:not(.nav-link) span:nth-child(19) { animation-delay: 0.95s; }
+
+/* Individual delays for nav-link hover */
+.nav-link[data-scroll-text]:hover span:nth-child(1) { animation-delay: 0.05s; }
+.nav-link[data-scroll-text]:hover span:nth-child(2) { animation-delay: 0.10s; }
+.nav-link[data-scroll-text]:hover span:nth-child(3) { animation-delay: 0.15s; }
+.nav-link[data-scroll-text]:hover span:nth-child(4) { animation-delay: 0.20s; }
+.nav-link[data-scroll-text]:hover span:nth-child(5) { animation-delay: 0.25s; }
+.nav-link[data-scroll-text]:hover span:nth-child(6) { animation-delay: 0.30s; }
+.nav-link[data-scroll-text]:hover span:nth-child(7) { animation-delay: 0.35s; }
+.nav-link[data-scroll-text]:hover span:nth-child(8) { animation-delay: 0.40s; }
+.nav-link[data-scroll-text]:hover span:nth-child(9) { animation-delay: 0.45s; }
+.nav-link[data-scroll-text]:hover span:nth-child(10) { animation-delay: 0.50s; }
+
+/* Add specific styles for the last nav-link (LET'S TALK) */
+.nav-link:last-child {
+  padding-right: 16px;
+  margin-right: 8px;
+  letter-spacing: 0.2em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  nav {
+    gap: 1.5rem;
+  }
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure fixed header doesn't overlap content */
+body {
+  padding-top: 80px;
+}
+
+/* Social link styles */
+.social-link {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: light;
+  padding: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0;
+  width: max-content;
+}
+
+.social-link span {
+  display: inline-block;
+  opacity: 1;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.social-link:hover span:not(.arrow) {
+  color: #000000;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  animation: letter-glow 2s ease infinite;
+}
+
+.social-link .arrow {
+  display: inline-block;
+  opacity: 1 !important;
+  animation: none !important;
+  margin-left: 4px;
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover .arrow {
+  opacity: 1 !important;
+  animation: none !important;
+  transform: translateX(2px);
+}

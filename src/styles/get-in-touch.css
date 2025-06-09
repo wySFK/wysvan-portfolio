@@ -1,0 +1,59 @@
+.get-in-touch {
+  text-align: left;
+  font-weight: 300;
+}
+
+.get-in-touch > span {
+  display: inline-block;
+}
+
+.get-in-touch.animate > span > i {
+  animation: typewriter 300ms forwards, background 1000ms forwards;
+}
+
+.get-in-touch > span > i {
+  opacity: 0;
+  color: #111;
+  font-style: normal;
+  display: inline-block;
+  min-width: 0.4em;
+  border-radius: 2px;
+}
+
+@keyframes typewriter {
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes background {
+  0% {
+    background: rgba(17, 17, 17, 0.1);
+  }
+  100% {}
+}
+
+/* Animation delays for each character */
+.get-in-touch > span > i:nth-of-type(1) { animation-delay: 100ms; }
+.get-in-touch > span > i:nth-of-type(2) { animation-delay: 200ms; }
+.get-in-touch > span > i:nth-of-type(3) { animation-delay: 300ms; }
+.get-in-touch > span > i:nth-of-type(4) { animation-delay: 400ms; }
+.get-in-touch > span > i:nth-of-type(5) { animation-delay: 500ms; }
+.get-in-touch > span > i:nth-of-type(6) { animation-delay: 600ms; }
+.get-in-touch > span > i:nth-of-type(7) { animation-delay: 700ms; }
+.get-in-touch > span > i:nth-of-type(8) { animation-delay: 800ms; }
+.get-in-touch > span > i:nth-of-type(9) { animation-delay: 900ms; }
+.get-in-touch > span > i:nth-of-type(10) { animation-delay: 1000ms; }
+.get-in-touch > span > i:nth-of-type(11) { animation-delay: 1100ms; }
+.get-in-touch > span > i:nth-of-type(12) { animation-delay: 1200ms; }
+.get-in-touch > span > i:nth-of-type(13) { animation-delay: 1300ms; }
+.get-in-touch > span > i:nth-of-type(14) { animation-delay: 1400ms; }
+.get-in-touch > span > i:nth-of-type(15) { animation-delay: 1500ms; }
+.get-in-touch > span > i:nth-of-type(16) { animation-delay: 1600ms; }
+.get-in-touch > span > i:nth-of-type(17) { animation-delay: 1700ms; }
+.get-in-touch > span > i:nth-of-type(18) { animation-delay: 1800ms; }
+.get-in-touch > span > i:nth-of-type(19) { animation-delay: 1900ms; }
+.get-in-touch > span > i:nth-of-type(20) { animation-delay: 2000ms; } 
