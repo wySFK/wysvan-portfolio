@@ -19,18 +19,18 @@ export default {
 		},
 		extend: {
 			colors: {
-				border: 'hsl(var(--border))',
+				border: 'transparent',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
-				background: 'hsl(var(--background))',
-				foreground: 'hsl(var(--foreground))',
+				background: '#FFFFFF',
+				foreground: '#000000',
 				primary: {
-					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					DEFAULT: '#000000',
+					foreground: '#FFFFFF'
 				},
 				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
+					DEFAULT: '#FFFFFF',
+					foreground: '#000000'
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
@@ -84,11 +84,57 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				blink: {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0' },
+				},
+				textSlide: {
+					'0%': { 
+						width: '0%',
+						left: '0'
+					},
+					'100%': { 
+						width: '100%',
+						left: '0'
+					}
+				},
+				bgSlide: {
+					'0%': { 
+						width: '0%'
+					},
+					'100%': { 
+						width: '100%'
+					}
+				},
+				spin: {
+					to: {
+						transform: 'rotate(360deg)',
+					},
+				},
+				textReveal: {
+					'0%': {
+						width: '0%'
+					},
+					'30%': {
+						width: '100%'
+					},
+					'85%': {
+						width: '100%'
+					},
+					'86%, 100%': {
+						width: '0%'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				blink: 'blink 1s infinite',
+				textSlide: 'textSlide 1s ease-out forwards',
+				bgSlide: 'bgSlide 1s ease-out forwards',
+				'spin-slow': 'spin 3s linear infinite',
+				'textReveal': 'textReveal 4s ease-in-out infinite',
 			}
 		}
 	},
